@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Vasanth Kumar!</title>
+    <style>
+        /* Custom Fonts (You can link Google Fonts here) */
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif; /* Default font */
+            background-color: #f8f0e3; /* Light beige background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .input-container {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        input[type="text"], input[type="number"] {
+            padding: 12px;
+            margin: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #ff6b6b; /* A warmer button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e05252;
+        }
+
+        .greeting-card {
+            background-color: #fff3cd; /* Light yellow background for the card */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: none; /* Hidden by default */
+            opacity: 0; /* Initial opacity for fade-in */
+            transition: opacity 1s ease-in-out; /* Fade-in transition */
+        }
+
+        .greeting-card.show {
+            display: block;
+            opacity: 1; /* Final opacity for fade-in */
+        }
+
+        .greeting-card h1 {
+            color: #d9534f; /* Matching the button color */
+            font-family: 'Dancing Script', cursive; /* More festive font for the main greeting */
+            font-size: 4em;
+            margin-bottom: 15px;
+        }
+
+        .greeting-card p {
+            color: #636e72; /* A softer text color */
+            font-size: 1.3em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .greeting-card .from {
+            color: #868e96;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .emoji {
+            font-size: 2.2em;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #5bc0de; /* A different accent color for the quote */
+            margin-bottom: 20px;
+        }
+
+        .sparkles {
+            color: #f39c12; /* A bright color for decorative text */
+            font-size: 1.5em;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="inputSection" class="input-container">
+        <label for="month">Enter Month:</label>
+        <input type="text" id="month" placeholder="e.g., April">
+
+        <label for="day">Enter Day:</label>
+        <input type="number" id="day" min="1" max="31" placeholder="e.g., 10">
+
+        <button onclick="checkBirthday()">Show Birthday Wish</button>
+    </div>
+
+    <div id="birthdayGreeting" class="greeting-card">
+        <h1><span class="emoji">🎂</span> Happy Birthday, Vasanth Kumar! <span class="emoji">🎉</span></h1>
+        <p class="quote">"A birthday is not just a day to celebrate, but a day to celebrate all the days that lead up to it."</p>
+        <p><span class="sparkles">Wishing you a day that's as special as you are!</span> May your path ahead be filled with joy, success, and all your heart's desires.</p>
+        <p>Here's to another year of wonderful achievements and great moments! <span class="emoji">🌟</span></p>
+        <p class="from">Warmest wishes on your special day,<br>Sandy <span class="emoji">😊</span></p>
+        <p class="sparkles">Have a fantastic birthday, Vasanth Kumar!</p>
+    </div>
+
+    <script>
+        function checkBirthday() {
+            const monthInput = document.getElementById("month").value.trim();
+            const dayInput = parseInt(document.getElementById("day").value);
+            const birthdayGreetingDiv = document.getElementById("birthdayGreeting");
+            const inputSectionDiv = document.getElementById("inputSection");
+
+            if (monthInput.toLowerCase() === "april" && dayInput === 10) {
+                birthdayGreetingDiv.classList.add("show"); // Add the 'show' class for fade-in
+                inputSectionDiv.style.display = "none"; // Hide the input section
+            } else {
+                birthdayGreetingDiv.classList.remove("show"); // Ensure it's not shown if date is wrong
+                birthdayGreetingDiv.style.display = "none"; // Keep hidden
+            }
+        }
+    </script>
+
+</body>
+</html>
